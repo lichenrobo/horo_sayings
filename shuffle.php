@@ -1,7 +1,10 @@
 <?php 
+date_default_timezone_set('PRC');
+
 $seqfile = 'seq.php';
 $seqdate=date("Y-m-d",filemtime($seqfile));
 $nowdate = date("Y-m-d");
+//echo $seqdate . '==' . $nowdate;
 //$nowdate = 0;
 if ($seqdate == $nowdate)
 {
