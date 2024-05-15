@@ -1,2 +1,2 @@
 # horo_sayings
-Some sayings of THE WISE WOLF Horo.
+A crude site to log some sayings of THE WISE WOLF Horo.
