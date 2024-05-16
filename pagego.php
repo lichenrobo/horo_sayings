@@ -1,10 +1,14 @@
 <?php 
-    function pagego($nowpage, $pages)
+//////////////////////////////////////////////
+////////////   显示当前页导航  ////////////////
+//////////////////////////////////////////////
+
+    function pagego($nowpage, $pages)       // 输入当前页数、总共需要多少页
     {
         $url = 'https://blog.lichenrobo.com/horo/';
         //echo $nowpage . ', ' . $pages;
 
-        if($pages<6)
+        if($pages < 6)      // 总页数少于 6 页的情况
         {
             //echo "最多5页！";
             echo '<div class="pagego">';
@@ -14,7 +18,7 @@
             $jumpurl = '<a href="' . $url . $tail . '">';
             echo '<li>' . $jumpurl . '«</a></li>';
 
-            for ($i=1; $i<=$pages; $i++)
+            for ($i=1; $i<=$pages; $i++)        // 列出每一页按钮
             {
                 if($i == $nowpage)      // 判断是不是当前页
                 {
@@ -36,7 +40,7 @@
             echo '</ul>';
             echo '</div>';
         }
-        else
+        else        // 总页数大于 5 页的情况
         {
             //echo "多于5页！";
             echo '<div class="pagego">';
@@ -46,9 +50,9 @@
             $jumpurl = '<a href="' . $url . $tail . '">';
             echo '<li>' . $jumpurl . '«</a></li>';
 
-            if($nowpage<3)
+            if($nowpage<3)      // 当前页是 第1页或者第2页 的情况
             {
-                for ($i=1; $i<=3; $i++)
+                for ($i=1; $i<=3; $i++)     // 列出前3页
                 {
                     if($i == $nowpage)      // 判断是不是当前页
                     {
@@ -72,7 +76,7 @@
                 echo '<li>' . $jumpurl . $pages . '</a></li>';
 
             }
-            elseif($nowpage>($pages-2))
+            elseif($nowpage>($pages-2))     // 当前页是最后两页的情况
             {
                 $tail = '?page=' . 1;      // 第一页链接
                 $jumpurl = '<a href="' . $url . $tail . '">';
@@ -99,19 +103,12 @@
                 }
 
             }
-            else
+            else        // 当前页是相对中间的情况
             {
                 $tail = '?page=' . 1;      // 第一页链接
-                if(1 == $nowpage)
-                {
-                    $jumpurl = '<a class="active" href="' . $url . $tail . '">';
-                    echo '<li>' . $jumpurl . '1</a></li>';
-                }
-                else
-                {
-                    $jumpurl = '<a href="' . $url . $tail . '">';
-                    echo '<li>' . $jumpurl . '1</a></li>';
-                }
+                $jumpurl = '<a href="' . $url . $tail . '">';
+                echo '<li>' . $jumpurl . '1</a></li>';
+
 
                 $tail = '?page=' . round($nowpage/2);      // 左...页链接
                 $jumpurl = '<a href="' . $url . $tail . '">';
@@ -133,16 +130,8 @@
 
 
                 $tail = '?page=' . $pages;      // 末一页链接
-                if($pages == $nowpage)
-                {
-                    $jumpurl = '<a class="active" href="' . $url . $tail . '">';
-                    echo '<li>' . $jumpurl . $pages . '</a></li>';
-                }
-                else
-                {
-                    $jumpurl = '<a href="' . $url . $tail . '">';
-                    echo '<li>' . $jumpurl . $pages . '</a></li>';
-                }
+                $jumpurl = '<a href="' . $url . $tail . '">';
+                echo '<li>' . $jumpurl . $pages . '</a></li>';
             }
 
 
@@ -154,6 +143,7 @@
             echo '</div>';
         }
 
+        // 导航 html 备份
         //echo '<div class="pagego">';
         //echo '<ul class="pagination">';
         //echo '<li><a href="#">«</a></li>';

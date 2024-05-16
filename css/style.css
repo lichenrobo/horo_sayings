@@ -3,7 +3,7 @@ body {
     color: #333333;
     margin: 0;
     padding: 0;
-    background-image: url('../pic/paper-1.jpg'); /* 麦田照片的路径 */
+    background-image: url('../pic/paper-1.jpg'); /* 页面背景照片的路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-image: url('../pic/letter1.jpg'); /* 麦田照片的路径 */
+    background-image: url('../pic/letter1.jpg'); /* 文本背景照片的路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -60,7 +60,7 @@ h1 {
 
 
 
-
+/* 导航栏格式 */
 .pagego {
     text-align: center;
     position: absolute;
@@ -98,7 +98,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 
 
-
+/* 返回 blog 按钮样式  */
 .niceButton{
     background-image: url('../pic/wheat-trans.png');
     /*background:transparent;*/

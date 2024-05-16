@@ -8,10 +8,11 @@
 
 </head>
 <body>
-
+    <!-- 导航回 blog 按钮 -->
     <div id="back" style="z-index: 9999; position: fixed ! important; left: 60px; top: 100px;">   
         <a class="niceButton" href="https://blog.lichenrobo.com/"><span></span></a>      
     </div>
+
 
     <div class="container">
         <h1>贤狼赫萝的智慧语录</h1>
@@ -22,7 +23,7 @@
         require_once('quote.php');      // 显示文本函数 
         
 
-        // 获取page参数
+        // 获取 url - page 参数
         $query = $_SERVER["QUERY_STRING"];
         parse_str($query,$param);
         $page = $param['page'];
@@ -34,14 +35,14 @@
         $pages = ceil(($lines+1)/(4*$quotenum));    // 总共需要多少页
         
 
-        // 根据page参数，显示文本
+        // 根据当前页面参数，显示文本
         displayquote($page, $quotenum);
 
         // 显示本页导航菜单
         pagego($page, $pages); 
 
         ?>
-        <!--
+        <!-- 文本显示备份
         <div class="quote">
             <p>「賢きとは己を知ること也」</p>
             <p>「自知之明者，谓之贤也。」</p>
